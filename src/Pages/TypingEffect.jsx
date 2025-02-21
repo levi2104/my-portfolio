@@ -3,22 +3,25 @@ import Typed from "typed.js";
 
 const TypingEffect = () => {
   const el = useRef(null);
+  const typedInstance = useRef(null);
 
   useEffect(() => {
-    const typed = new Typed(el.current, {
+    typedInstance.current = new Typed(el.current, {
       strings: ["Front-end Developer.", "React Enthusiast.", "Web Innovator."],
-      typeSpeed: 50,
-      backSpeed: 40,
+      typeSpeed: 40,
+      backSpeed: 30,
       loop: true,
-      startDelay: 1000,
-      backDelay: 1000,
-      cursorChar: "_"
+      startDelay: 500,
+      backDelay: 800,
+      cursorChar: "|",
     });
 
-    return () => typed.destroy(); // Cleanup to prevent memory leak
+    return () => {
+      typedInstance.current?.destroy();
+    };
   }, []);
 
-  return <span ref={el} className="text-neonPurple" />;
+  return <span ref={el} className="text-neonPurple font-semibold text-lg sm:text-xl md:text-2xl" />;
 };
 
 export default TypingEffect;

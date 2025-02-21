@@ -70,9 +70,7 @@ const Hero = () => {
         <directionalLight intensity={1} position={[3, 2, 1]} />
         {/* eslint-enable react/no-unknown-property */}
 
-        <div className="absolute">
-          <AnimatedSphere />
-        </div>
+        <AnimatedSphere />
       </Canvas>
     </section>
   );

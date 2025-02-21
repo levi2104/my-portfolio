@@ -17,7 +17,7 @@ const AnimatedSphere = () => {
   });
 
   return (
-    <mesh ref={sphereRef}>
+    <mesh ref={sphereRef} position={[0, 0, 0]}>
       <icosahedronGeometry args={[5, 0]} />
       <meshStandardMaterial color="#8A2BE2" wireframe />
     </mesh>
@@ -70,7 +70,9 @@ const Hero = () => {
         <directionalLight intensity={1} position={[3, 2, 1]} />
         {/* eslint-enable react/no-unknown-property */}
 
-        <AnimatedSphere className="absolute " />
+        <div className="absolute">
+          <AnimatedSphere />
+        </div>
       </Canvas>
     </section>
   );

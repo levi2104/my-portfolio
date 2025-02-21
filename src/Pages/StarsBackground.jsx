@@ -6,6 +6,8 @@ const StarsBackground = () => {
   const mountRef = useRef(null);
 
   useEffect(() => {
+    let frameId;
+
     // Scene Setup
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
@@ -18,28 +20,23 @@ const StarsBackground = () => {
 
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
 
-    // Mount check before appending
-    if (mountRef.current) {
-      mountRef.current.appendChild(renderer.domElement);
+    // Append Renderer
+    mountRef.current?.appendChild(renderer.domElement);
+
+    // Star Geometry Optimization
+    const starCount = 4000;
+    const positions = new Float32Array(starCount * 3);
+    for (let i = 0; i < starCount * 3; i++) {
+      positions[i] = (Math.random() - 0.5) * 15;
     }
 
-    // Star Geometry
     const starsGeometry = new THREE.BufferGeometry();
-    const starVertices = [];
-    for (let i = 0; i < 6000; i++) {
-      const x = (Math.random() - 0.5) * 10;
-      const y = (Math.random() - 0.5) * 10;
-      const z = Math.random() * 10;
-      starVertices.push(x, y, z);
-    }
-    starsGeometry.setAttribute(
-      "position",
-      new THREE.Float32BufferAttribute(starVertices, 3)
-    );
+    starsGeometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
 
     const starsMaterial = new THREE.PointsMaterial({
-      color: 0x00ffff, // Neon blue
+      color: 0x00ffff,
       size: 0.02,
       transparent: true,
     });
@@ -49,27 +46,33 @@ const StarsBackground = () => {
 
     // Animation
     const animateStars = () => {
-      stars.rotation.y += 0.0005;
-      stars.rotation.x += 0.0005;
+      stars.rotation.y += 0.0003;
+      stars.rotation.x += 0.0003;
       renderer.render(scene, camera);
-      requestAnimationFrame(animateStars);
+      frameId = requestAnimationFrame(animateStars);
     };
 
-    // Smooth Zoom Effect on Load
-    gsap.to(camera.position, { z: 3, duration: 2, ease: "power2.out" });
+    gsap.to(camera.position, { z: 3, duration: 1.5, ease: "power2.out" });
 
     animateStars();
 
-    // Cleanup Function (Fixing removeChild issue)
+    // Resize Handling
+    const handleResize = () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    };
+    window.addEventListener("resize", handleResize);
+
     return () => {
-      if (mountRef.current) {
-        mountRef.current.removeChild(renderer.domElement);
-      }
+      cancelAnimationFrame(frameId);
+      window.removeEventListener("resize", handleResize);
+      mountRef.current?.removeChild(renderer.domElement);
+      renderer.dispose();
     };
   }, []);
 
-
-  return <div ref={mountRef} className="absolute inset-0 z-0" />;
+  return <div ref={mountRef} className="absolute inset-0 z-0 w-full h-full" />;
 };
 
 export default StarsBackground;

@@ -102,10 +102,10 @@
 // import TodoList from "./10.State&Hook/TodoList";
 
 // import Docs from "./11.DocsWebsite/Docs";
-import AboutMe from "./20.BasicProjects/0.Portfolio/Pages/AboutMe";
-import ContactUs from "./20.BasicProjects/0.Portfolio/Pages/ContactUs";
-import Hero from "./20.BasicProjects/0.Portfolio/Pages/Hero";
-import ProjectsShowcase from "./20.BasicProjects/0.Portfolio/Pages/ProjectsShowcase";
+import AboutMe from "./Pages/AboutMe";
+import ContactUs from "./Pages/ContactUs";
+import Hero from "./Pages/Hero";
+import ProjectsShowcase from "./Pages/ProjectsShowcase";
 
 // import Example1 from "./10.State&Hook/Example1";
 // import Example2 from "./10.State&Hook/Example2";

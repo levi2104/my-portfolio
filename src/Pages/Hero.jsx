@@ -60,7 +60,7 @@ const Hero = () => {
   
       {/* 3D Model */}
       <div className="absolute inset-0 w-full h-full flex justify-center items-center pointer-events-none z-0">
-        <Canvas className="w-full h-full">
+        <Canvas className="w-full h-full pointer-events-none">
           <OrbitControls enableZoom={false} enablePan={false} enabled={false} />
           <ambientLight intensity={0.5} />
           <directionalLight intensity={1} position={[3, 2, 1]} />

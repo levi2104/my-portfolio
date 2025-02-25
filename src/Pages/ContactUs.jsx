@@ -71,13 +71,13 @@ const ContactMe = () => {
           />
           <motion.button
             type="submit"
-            style={{ color: "black" }}
-            className="p-3 bg-neonBlue font-semibold rounded-lg"
+            className="p-3 bg-neonBlue !text-black font-semibold rounded-lg"
             whileHover={{ scale: 1.04 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
             Send Message
           </motion.button>
+
 
         </form>
 

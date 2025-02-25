@@ -51,7 +51,7 @@ const Hero = () => {
       className="mt-6 md:mt-9"
     >
       <Link to="contact" smooth={true} duration={800}>
-        <span className="px-5 py-3 w-fit text-neonPurple bg-darkBg border-[3px] border-neonPurple font-semibold rounded-lg shadow-lg hover:scale-105 transition-all duration-300 block cursor-pointer lg:mx-0 mx-auto">
+        <span className="px-5 py-3 w-fit text-neonBlue bg-darkBg border-[3px] border-neonBlue font-semibold rounded-lg shadow-lg hover:scale-105 transition-all duration-300 block cursor-pointer lg:mx-0 mx-auto">
           Hire Me
         </span>
       </Link>

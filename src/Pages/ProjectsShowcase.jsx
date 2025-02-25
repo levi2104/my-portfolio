@@ -62,7 +62,7 @@ const ProjectsShowcase = () => {
         href="/Aryan_resume_ATS.pdf"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-5 right-5 md:bottom-10 md:right-10 z-50 bg-neonBlue text-black px-4 py-2 rounded-full shadow-lg hover: transition"
+        className="fixed bottom-5 right-5 md:bottom-10 md:right-10 z-50 bg-neonBlue !text-black px-4 py-2 rounded-full shadow-lg hover: transition"
       >
         Resume 📄
       </a>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 const projects = [
@@ -29,40 +30,67 @@ const projects = [
 ];
 
 const ProjectsShowcase = () => {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="min-h-screen bg-darkBg text-whiteText px-6 md:px-12 lg:px-20 py-16">
+    <section
+      ref={sectionRef}
+      className="min-h-screen bg-darkBg text-whiteText px-8 py-16 relative"
+    >
       {/* Resume Ribbon */}
       <a
         href="/Aryan_resume_ATS.pdf"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed w-[18%] text-center top-10 -right-10 bg-neonBlue text-black px-4 py-1 font-semibold shadow-lg transform rotate-45 translate-x-8 -translate-y-4 z-50"
+        className="fixed bottom-5 right-5 md:bottom-10 md:right-10 z-50 bg-neonBlue text-black px-4 py-2 rounded-full shadow-lg hover: transition"
       >
-        Resume.pdf
+        Resume 📄
       </a>
 
-      <h2 className="text-center text-3xl sm:text-4xl font-bold text-neonBlue mb-12">
+      <h2 className="text-center text-4xl font-bold text-neonBlue mb-12">
         Projects Showcase
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="bg-white/10 p-6 rounded-lg shadow-lg border border-white/20 backdrop-blur-md hover:shadow-xl transition duration-300"
+            className="bg-white/10 p-6 rounded-lg shadow-lg border border-white/20 backdrop-blur-md"
             initial={{ opacity: 0, scale: 0.8 }}
+            animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
             whileHover={{ scale: 1.05 }}
           >
-            <h3 className="text-lg sm:text-xl font-semibold text-neonPurple">
+            <h3 className="text-xl font-semibold text-neonPurple">
               {project.title}
             </h3>
-            <p className="text-xs sm:text-sm text-white/70 mt-2">{project.techStack}</p>
+            <p className="text-sm text-white/70 mt-2">{project.techStack}</p>
             <p className="text-sm text-white/80 mt-4">{project.description}</p>
-            <div className="flex justify-between mt-6 text-sm sm:text-base">
+            <div className="flex justify-between mt-6">
               <a
-                href={project.liveLink}
+                href="https://github.com/levi2104"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-neonBlue flex items-center gap-2 hover:underline"
@@ -70,7 +98,7 @@ const ProjectsShowcase = () => {
                 Live Demo <FaExternalLinkAlt />
               </a>
               <a
-                href={project.githubLink}
+                href="https://github.com/levi2104"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-whiteText flex items-center gap-2 hover:underline"

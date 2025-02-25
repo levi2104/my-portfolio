@@ -13,7 +13,7 @@ const TypingEffect = () => {
       loop: true,
       startDelay: 500,
       backDelay: 800,
-      cursorChar: "|",
+      cursorChar: "_",
     });
 
     return () => {

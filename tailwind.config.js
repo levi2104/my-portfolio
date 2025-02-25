@@ -9,6 +9,7 @@ export default {
         neonPurple: "#8A2BE2",
         darkBg: "#0a0a0a",
         whiteText: "#ffffff",
+        blackText: "#000000",
       },
     },
   },

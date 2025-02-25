@@ -58,7 +58,7 @@ const Hero = () => {
       </motion.div>
 
       {/* 3D Model */}
-      <div className="relative w-full h-full flex justify-center items-center pointer-events-none">
+      <div className="relative w-full h-full flex justify-center items-center">
         <Canvas className="w-full h-full touch-none">
           <OrbitControls enableZoom={false} enablePan={false} enabled={false} />
           <ambientLight intensity={0.5} />

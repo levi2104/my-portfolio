@@ -71,14 +71,12 @@ const ContactMe = () => {
           />
           <motion.button
             type="submit"
-            className="p-3 bg-neonBlue !text-black font-semibold rounded-lg"
+            className="p-3 bg-neonBlue force-text-black font-semibold rounded-lg"
             whileHover={{ scale: 1.04 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
             Send Message
           </motion.button>
-
-
         </form>
 
         <div className="flex justify-center gap-8 mt-8">

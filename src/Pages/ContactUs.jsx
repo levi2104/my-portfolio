@@ -33,7 +33,7 @@ const ContactMe = () => {
   return (
     <section
       id="contact"
-      className="relative flex flex-col items-center justify-center min-h-screen bg-darkBg px-8 py-16"
+      className="relative flex flex-col text-black items-center justify-center min-h-screen bg-darkBg px-8 py-16"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -71,7 +71,7 @@ const ContactMe = () => {
           />
           <motion.button
             type="submit"
-            className="p-3 bg-neonBlue text-darkBg font-semibold rounded-lg"
+            className="p-3 bg-neonBlue font-semibold rounded-lg"
             whileHover={{ scale: 1.04 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >

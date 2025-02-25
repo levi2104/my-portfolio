@@ -42,7 +42,7 @@ const ContactMe = () => {
         viewport={{ once: false }}
         className="relative bg-gradient-to-r from-[#1a1a1a] to-[#0a0a0a] backdrop-blur-md shadow-2xl rounded-2xl p-12 w-full max-w-4xl border border-white/20"
       >
-        <h3 className="text-2xl text-neonBlue text-center">Contact Me</h3>
+        <h3 className="text-2xl font-semibold text-neonBlue text-center">Contact Me</h3>
         <form
           ref={formRef}
           onSubmit={sendEmail}
@@ -71,7 +71,7 @@ const ContactMe = () => {
           />
           <motion.button
             type="submit"
-            className="p-3 bg-neonBlue text-black font-semibold rounded-lg"
+            className="p-3 bg-neonBlue !text-black font-semibold rounded-lg"
             whileHover={{ scale: 1.04 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >

@@ -5,7 +5,7 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 const projects = [
   {
     title: "Weather Forecast Website",
-    techStack: "React.js, Tailwind CSS, JavaScript",
+    techStack: "React.js, Tailwind CSS, JavaScript", 
     liveLink: "#",
     githubLink: "#",
     description:

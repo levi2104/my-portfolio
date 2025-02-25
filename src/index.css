@@ -10,6 +10,9 @@
   color: rgb(231, 131, 37);
 }
 
-.force-text-black {
-  color: black !important;
+@media (max-width: 768px) {
+  .force-mobile-black {
+    color: black !important;
+  }
 }
+

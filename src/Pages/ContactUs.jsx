@@ -33,7 +33,7 @@ const ContactMe = () => {
   return (
     <section
       id="contact"
-      className="relative flex flex-col items-center justify-center min-h-screen bg-darkBg text-whiteText px-8 py-16"
+      className="relative flex flex-col items-center justify-center min-h-screen bg-darkBg px-8 py-16"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}

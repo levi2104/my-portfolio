@@ -33,28 +33,30 @@ const Hero = () => {
         transition={{ duration: 1 }}
         className="text-center md:text-left md:absolute md:left-10 md:top-1/3 z-10"
       >
-        <h1 className="text-4xl md:text-5xl font-bold text-neonBlue">
-          Aryan Tanna
-        </h1>
-        <h2 className="mt-3 text-lg md:text-xl text-neonPurple">
-          <TypingEffect />
-        </h2>
-        <p className="mt-4 md:mt-6 text-sm md:text-md">
-          Creating stunning, high-performance web applications.
-        </p>
-
-        <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          className="mt-6 md:mt-9"
-        >
-          <Link to="contact" smooth={true} duration={800}>
-            <span className="px-5 py-3 w-fit bg-neonPurple text-white font-semibold rounded-lg shadow-lg hover:scale-105 transition-all duration-300 block cursor-pointer lg:w-[26%] lg:mx-0 mx-auto">
-              Hire Me
-            </span>
-          </Link>
-        </motion.div>
+        <div className="w-screen h-screen">
+          <h1 className="text-4xl md:text-5xl font-bold text-neonBlue">
+            Aryan Tanna
+          </h1>
+          <h2 className="mt-3 text-lg md:text-xl text-neonPurple">
+            <TypingEffect />
+          </h2>
+          <p className="mt-4 md:mt-6 text-sm md:text-md">
+            Creating stunning, high-performance web applications.
+          </p>
+  
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="mt-6 md:mt-9"
+          >
+            <Link to="contact" smooth={true} duration={800}>
+              <span className="px-5 py-3 w-fit bg-neonPurple text-white font-semibold rounded-lg shadow-lg hover:scale-105 transition-all duration-300 block cursor-pointer lg:w-[26%] lg:mx-0 mx-auto">
+                Hire Me
+              </span>
+            </Link>
+          </motion.div>
+        </div>
       </motion.div>
 
       {/* 3D Model */}

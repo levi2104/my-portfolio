@@ -25,7 +25,7 @@ const AnimatedSphere = () => {
 
 const Hero = () => {
   return (
-    <section className="relative h-screen bg-darkBg text-whiteText overflow-hidden flex flex-col md:flex-row items-center justify-center px-6 md:px-12">
+    <section className="relative h-screen bg-darkBg text-whiteText overflow-auto md:overflow-hidden flex flex-col md:flex-row items-center justify-center px-6 md:px-12">
       {/* Left Content */}
       <motion.div
         initial={{ opacity: 0, x: -100 }}
@@ -33,6 +33,7 @@ const Hero = () => {
         transition={{ duration: 1 }}
         className="text-center md:text-left md:absolute md:left-10 md:top-1/3 z-10"
       >
+        {/* Removed extra wrapper div for better centering on mobile */}
         <h1 className="text-4xl md:text-5xl font-bold text-neonBlue">
           Aryan Tanna
         </h1>
@@ -42,7 +43,7 @@ const Hero = () => {
         <p className="mt-4 md:mt-6 text-sm md:text-md">
           Creating stunning, high-performance web applications.
         </p>
-
+    
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
@@ -56,17 +57,17 @@ const Hero = () => {
           </Link>
         </motion.div>
       </motion.div>
-
+  
       {/* 3D Model */}
-      <div className="relative w-full h-full flex justify-center items-center">
-        <Canvas className="w-full h-full touch-none">
+      <div className="absolute inset-0 w-full h-full flex justify-center items-center pointer-events-none z-0">
+        <Canvas className="w-full h-full">
           <OrbitControls enableZoom={false} enablePan={false} enabled={false} />
           <ambientLight intensity={0.5} />
           <directionalLight intensity={1} position={[3, 2, 1]} />
           <AnimatedSphere />
         </Canvas>
       </div>
-    </section>
+  </section>
   );
 };
 

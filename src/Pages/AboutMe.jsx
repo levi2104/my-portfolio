@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
-import profilePic from "../assets/linkedin dp.jpg";
+import profilePic from "/linkedin-dp.jpg";
 import {
   FaReact,
   FaHtml5,

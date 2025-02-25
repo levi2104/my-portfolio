@@ -8,11 +8,11 @@ const TypingEffect = () => {
   useEffect(() => {
     typedInstance.current = new Typed(el.current, {
       strings: ["Front-end Developer.", "React Enthusiast.", "Web Innovator."],
-      typeSpeed: 40,
-      backSpeed: 30,
+      typeSpeed: 50,
+      backSpeed: 40,
       loop: true,
-      startDelay: 500,
-      backDelay: 800,
+      startDelay: 1000,
+      backDelay: 1000,
       cursorChar: "_",
     });
 

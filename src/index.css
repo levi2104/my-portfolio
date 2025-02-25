@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 *{
-  font-family: "Girloy";
+  font-family: 'Poppins', sans-serif;
 }
 
 ::selection{

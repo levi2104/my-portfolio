@@ -31,7 +31,7 @@ const Hero = () => {
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
-        className="border-2 w-screen h-screen text-center md:text-left md:absolute md:left-10 md:top-1/3 z-10"
+        className="border-2 w-[100%] h-[100%] text-center md:text-left md:absolute md:left-10 md:top-1/3 z-10"
       >
         <h1 className="text-4xl md:text-5xl font-bold text-neonBlue">
           Aryan Tanna

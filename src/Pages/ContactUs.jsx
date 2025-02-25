@@ -71,7 +71,7 @@ const ContactMe = () => {
           />
           <motion.button
             type="submit"
-            className="p-3 [@media_(min-width:100px)]:text-neonBlue bg-black font-semibold rounded-lg"
+            className="p-3 [@media_(min-width:100px)]:text-neonBlue bg-gradient-to-r from-[#1a1a1a] to-[#0a0a0a] border-2 border-neonBlue font-semibold rounded-lg"
             whileHover={{ scale: 1.04 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >

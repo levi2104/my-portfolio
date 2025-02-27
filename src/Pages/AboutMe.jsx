@@ -46,7 +46,7 @@ const AboutMe = () => {
       if (i === bioText.length) {
         clearInterval(interval);
       }
-    }, 50);
+    }, 30);
 
     return () => clearInterval(interval);
   }, [isVisible]);

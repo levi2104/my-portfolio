@@ -61,7 +61,7 @@ const AboutMe = () => {
         animate={isVisible ? { opacity: 1, scale: 1 } : {}}
         transition={{ duration: 0.8, ease: "easeOut" }}
         whileHover={{ scale: 1.05 }}
-        className="border-[3px] border-neonBlue relative bg-darkBg rounded-2xl p-10 w-full max-w-3xl border-opacity-100"
+        className="border-[3px] border-neonBlue relative bg-darkBg rounded-2xl p-10 w-full max-w-3xl bg-[#0a0a0a] bg-opacity-100"
       >
         <div className="flex justify-center -mt-20">
           <img

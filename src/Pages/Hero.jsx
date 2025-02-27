@@ -49,13 +49,17 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1.5 }}
           className="mt-6 md:mt-9"
         >
           <Link to="contact" smooth={true} duration={800}>
-            <span className="px-5 py-3 w-fit text-neonBlue bg-darkBg border-[3px] border-neonBlue border-opacity-100 font-semibold rounded-lg hover:scale-105 transition-all duration-300 block cursor-pointer md:mx-0 mx-auto">
+            <motion.span
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="px-5 py-3 w-fit text-neonBlue bg-darkBg border-[3px] border-neonBlue border-opacity-100 font-semibold rounded-lg block cursor-pointer md:mx-0 mx-auto"
+            >
               Hire Me
-            </span>
+            </motion.span>
           </Link>
         </motion.div>
       </motion.div>

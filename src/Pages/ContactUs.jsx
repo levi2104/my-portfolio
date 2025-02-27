@@ -1,95 +1,117 @@
+// template id: template_sws73ym
+// service id: service_w9olcrb
+// public key: Ok0-_i2GZGYr6_3re
+
 import { motion } from "framer-motion";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { useRef } from "react";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaPhone } from "react-icons/fa6";
+import emailjs from "@emailjs/browser";
 
-const projects = [
-  {
-    title: "Weather Forecast Website",
-    techStack: "React.js, Tailwind CSS, JavaScript",
-    liveLink: "#",
-    githubLink: "#",
-    description:
-      "A real-time weather forecast app with OpenWeatherMap API integration.",
-  },
-  {
-    title: "E-Commerce Product Listing Page",
-    techStack: "React.js, Tailwind CSS, JavaScript",
-    liveLink: "#",
-    githubLink: "#",
-    description:
-      "A dynamic e-commerce page with product filtering and Add to Cart functionality.",
-  },
-  {
-    title: "Movie Recommendation Website",
-    techStack: "React.js, Tailwind CSS, JavaScript",
-    liveLink: "#",
-    githubLink: "#",
-    description:
-      "A movie listing app with TMDB API integration for top-rated and trending movies.",
-  },
-];
+const ContactMe = () => {
+  const formRef = useRef(null);
 
-const ProjectsShowcase = () => {
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_w9olcrb", 
+        "template_sws73ym", 
+        formRef.current,
+        "Ok0-_i2GZGYr6_3re" 
+      )
+      .then(() => {
+        alert("Message Sent Successfully!");
+      })
+      .catch((error) => {
+        alert("Failed to Send Message: " + error.text);
+      });
+
+    e.target.reset();
+  };
+
   return (
-    <section className="min-h-screen bg-darkBg text-white px-8 py-16 relative">
-      {/* Resume Ribbon */}
-      <a
-        href="/Aryan_resume_ATS.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-5 right-5 md:bottom-10 md:right-10 z-50 [@media_(min-width:100px)]:text-neonBlue border-[3px] border-neonBlue bg-darkBg px-4 py-2 rounded-full shadow-lg hover: transition"
-      >
-        Resume 📄
-      </a>
-
-      <motion.h2
-        className="text-center text-4xl font-bold text-neonBlue mb-12"
-        initial={{ opacity: 0, y: -50 }}
+    <section
+      id="contact"
+      className="relative flex justify-center items-center min-h-screen bg-darkBg text-whiteText px-8 py-16"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        viewport={{ once: false }}
+        className="relative bg-gradient-to-r from-[#1a1a1a] to-[#0a0a0a] backdrop-blur-md shadow-2xl rounded-2xl p-12 w-full max-w-4xl border-[3px] border-neonBlue"
       >
-        Projects Showcase
-      </motion.h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            className="bg-darkBg p-6 rounded-lg shadow-lg border-[3px] border-neonBlue backdrop-blur-md"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
-            whileHover={{ scale: 1.05 }}
-            viewport={{ once: true }}
+        <h3 className="text-2xl font-bold text-neonBlue text-center">Contact Me</h3>
+        <form
+          ref={formRef}
+          onSubmit={sendEmail}
+          className="mt-12 flex flex-col gap-8"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            className="p-3 rounded-lg bg-white/10 text-white outline-none border-2 border-neonPurple"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            className="p-3 rounded-lg bg-white/10 text-white outline-none border-2 border-neonPurple"
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows={4}
+            required
+            className="p-3 rounded-lg bg-white/10 text-white outline-none border-2 border-neonPurple"
+          />
+          <motion.button
+            type="submit"
+            className="p-3 bg-transparent text-neonBlue border-[3px] border-neonBlue font-semibold rounded-lg"
+            whileHover={{ scale: 1.03 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <h3 className="text-xl font-semibold text-neonPurple">
-              {project.title}
-            </h3>
-            <p className="text-sm text-white/70 mt-2">{project.techStack}</p>
-            <p className="text-sm text-white/80 mt-4">{project.description}</p>
-            <div className="flex justify-between mt-6">
-              <a
-                href="https://github.com/levi2104"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-neonBlue flex items-center gap-2 hover:underline"
-              >
-                Live Demo <FaExternalLinkAlt />
-              </a>
-              <a
-                href="https://github.com/levi2104"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-whiteText flex items-center gap-2 hover:underline"
-              >
-                GitHub <FaGithub />
-              </a>
-            </div>
-          </motion.div>
-        ))}
-      </div>
+            Send Message
+          </motion.button>
+        </form>
+
+        <div className="flex justify-center gap-8 mt-8">
+          <motion.a
+            href="https://www.linkedin.com/in/aryan-tanna"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2 }}
+          >
+            <FaLinkedin className="text-[#0077b5] text-4xl" />
+          </motion.a>
+          <motion.a
+            href="https://github.com/levi2104"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2 }}
+          >
+            <FaGithub className="text-gray-300 text-4xl" />
+          </motion.a>
+          
+          <motion.a
+            href="mailto:aryantanna2104@gmail.com"
+            whileHover={{ scale: 1.2 }}
+          >
+            <FaEnvelope className="text-red-500 text-4xl" />
+          </motion.a>
+
+          <motion.a href="tel:+919033453016" whileHover={{ scale: 1.2 }}>
+            <FaPhone className="text-green-500 text-4xl rotate-0" />
+          </motion.a>
+        </div>
+      </motion.div>
     </section>
   );
 };
 
-export default ProjectsShowcase;
+export default ContactMe;

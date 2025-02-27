@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unknown-property */
 import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import profilePic from "/linkedin-dp.jpg";
@@ -7,7 +6,6 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaJsSquare,
-  FaGithub,
 } from "react-icons/fa";
 
 const AboutMe = () => {
@@ -31,6 +29,7 @@ const AboutMe = () => {
 
     return () => {
       if (sectionRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(sectionRef.current);
       }
     };
@@ -55,20 +54,20 @@ const AboutMe = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-row justify-center items-center min-h-screen bg-darkBg text-whiteText px-8 py-16"
+      className="relative flex justify-center items-center min-h-screen bg-darkBg text-whiteText px-8 py-16"
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={isVisible ? { opacity: 1, scale: 1 } : {}}
         transition={{ duration: 0.8, ease: "easeOut" }}
         whileHover={{ scale: 1.05 }}
-        className="relative bg-white/10 backdrop-blur-md shadow-lg rounded-2xl p-10 w-full max-w-3xl border border-white/20"
+        className="border-[3px] border-neonBlue relative bg-darkBg rounded-2xl p-10 w-full max-w-3xl"
       >
         <div className="flex justify-center -mt-20">
           <img
             src={profilePic}
             alt="Profile"
-            className="w-32 h-32 object-cover rounded-full border-4 border-neonBlue shadow-neon"
+            className="w-32 h-32 object-cover rounded-full border-4 border-neonBlue"
           />
         </div>
 
@@ -119,29 +118,31 @@ const AboutMe = () => {
           </motion.div>
         </div>
 
-        <h3 className="text-xl text-neonBlue mt-8 text-center">
+        <h3 className="text-xl font-semibold text-neonBlue mt-8 text-center">
           Technical Skills
         </h3>
         <div className="flex justify-center gap-6 mt-4">
-          {[FaReact, FaHtml5, FaCss3Alt, FaJsSquare, FaGithub].map(
-            (Icon, index) => (
-              <motion.div key={index} whileHover={{ scale: 1.2 }}>
-                <Icon
-                  className={`text-4xl ${
-                    index === 0
-                      ? "text-neonBlue"
-                      : index === 1
-                      ? "text-orange-500"
-                      : index === 2
-                      ? "text-blue-500"
-                      : index === 3
-                      ? "text-yellow-400"
-                      : "text-gray-300"
-                  }`}
-                />
-              </motion.div>
-            )
-          )}
+          {[FaReact, FaHtml5, FaCss3Alt, FaJsSquare].map((Icon, index) => (
+            <motion.div
+              key={index}
+              whileHover={{
+                scale: 1.2,
+                transition: { duration: 0.3, ease: "easeOut" },
+              }}
+            >
+              <Icon
+                className={`text-4xl ${
+                  index === 0
+                    ? "text-neonBlue"
+                    : index === 1
+                    ? "text-orange-500"
+                    : index === 2
+                    ? "text-blue-500"
+                    : "text-yellow-400"
+                }`}
+              />
+            </motion.div>
+          ))}
         </div>
       </motion.div>
     </section>

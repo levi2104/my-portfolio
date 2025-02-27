@@ -62,12 +62,12 @@ const AboutMe = () => {
             {
               title: "Higher Secondary Education",
               subtitle: "School of Science (SOS) - 90.33% (2020 - 2021)",
-              delay: 0.4,
+              delay: 0.3,
             },
             {
               title: "Secondary Education",
               subtitle: "Natural Education Academy - 85.33% (2018 - 2019)",
-              delay: 0.6,
+              delay: 0.4,
             },
           ].map((item, index) => (
             <motion.div

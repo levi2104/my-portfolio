@@ -7,7 +7,7 @@ const projects = [
     techStack: "React.js, Tailwind CSS, JavaScript",
     liveLink: "#",
     githubLink: "#",
-    description: "Built a responsive Apple Store homepage clone with interactive sliders, hover dropdown menus, and a dynamic search bar. Implemented smooth UI interactions and currently integrating React Router for seamless navigation."
+    description: "A responsive Apple Store homepage clone with all the features just like the official Website."
   },
   {
     title: "Weather Forecast Website",

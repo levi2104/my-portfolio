@@ -3,20 +3,19 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 const projects = [
   {
+    title: "Apple Store Clone",
+    techStack: "React.js, Tailwind CSS, JavaScript",
+    liveLink: "#",
+    githubLink: "#",
+    description: "Built a responsive Apple Store homepage clone with interactive sliders, hover dropdown menus, and a dynamic search bar. Implemented smooth UI interactions and currently integrating React Router for seamless navigation."
+  },
+  {
     title: "Weather Forecast Website",
     techStack: "React.js, Tailwind CSS, JavaScript",
     liveLink: "#",
     githubLink: "#",
     description:
       "A real-time weather forecast app with OpenWeatherMap API integration.",
-  },
-  {
-    title: "E-Commerce Product Listing Page",
-    techStack: "React.js, Tailwind CSS, JavaScript",
-    liveLink: "#",
-    githubLink: "#",
-    description:
-      "A dynamic e-commerce page with product filtering and Add to Cart functionality.",
   },
   {
     title: "Movie Recommendation Website",

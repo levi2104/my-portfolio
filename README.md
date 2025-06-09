@@ -21,27 +21,54 @@ This is a modern, responsive **developer portfolio website** built using **React
 
 ## 📂 Folder Structure
 
-src/
+```
+portfolio/
+├── public/
+│   └── linkedin-dp.jpg
 │
-├── components/
-│ ├── Hero.jsx # 3D Hero section with animated typing & canvas
-│ ├── AboutMe.jsx # Bio, education timeline & skills
-│ ├── ProjectsShowcase.jsx # Interactive project cards
-│ ├── Contact.jsx # Contact form + EmailJS + Socials
-│ └── TypingEffect.jsx # Typed.js animated typing component
+├── src/
+│   ├── components/
+│   │   ├── AboutMe.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Hero.jsx
+│   │   ├── ProjectsShowcase.jsx
+│   │   └── TypingEffect.jsx
+│   │
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
 │
-├── assets/
-│ └── linkedin-dp.jpg # Profile picture
-│
-└── App.jsx # Main app layout & section routing
+├── tailwind.config.js
+├── package.json
+└── README.md
+└── .........
+.
+.
+.
+└── .........
 
+
+```
 
 ---
 
 ## 📸 Screenshots
 
-> Add screenshots of the Hero section, About Me, Projects, and Contact sections here  
-> (drag images into this section after pushing to GitHub)
+### Hero Section:
+
+![image](https://github.com/user-attachments/assets/78ab8a24-2890-4bd2-9cec-456cd0b7028a)
+
+### About Me Section:
+
+![image](https://github.com/user-attachments/assets/2d4d5582-2186-45d7-8c76-af0885d71d38)
+
+### Projects Section:
+
+![image](https://github.com/user-attachments/assets/c7682ec1-5122-434b-870d-1f76ff3834b4)
+
+### Contact Section:
+
+![image](https://github.com/user-attachments/assets/b1280972-856d-48fb-9171-a3d6234a25a6)
 
 ---
 

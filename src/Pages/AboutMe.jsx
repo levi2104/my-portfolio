@@ -11,22 +11,21 @@ const AboutMe = () => {
     "Full-stack developer passionate about building modern, responsive web applications using React.js, Node.js, Express.js and MongoDB. Experienced in designing secure authentication systems, crafting AI-enhanced user experiences, and delivering seamless, scalable solutions.";
   const sectionRef = useRef(null);
 
-  // Icons and their colors
   const techIcons = [
-  { Icon: FaHtml5, color: "text-orange-500" },        // HTML5
-  { Icon: FaCss3Alt, color: "text-blue-500" },        // CSS3
-  { Icon: SiTailwindcss, color: "text-sky-400" },     // Tailwind CSS
-  { Icon: FaJsSquare, color: "text-yellow-400" },     // JavaScript
-  { Icon: FaReact, color: "text-cyan-400" },          // React
-  { Icon: FaNodeJs, color: "text-green-500" },        // Node.js
-  { Icon: SiExpress, color: "text-gray-400" },        // Express.js
-  { Icon: SiMongodb, color: "text-green-400" },       // MongoDB
-  { Icon: SiJsonwebtokens, color: "text-pink-400" },  // JWT
-  { Icon: FaGitAlt, color: "text-orange-600" },       // Git
-  { Icon: FaGithub, color: "text-gray-300" },         // GitHub
-  { Icon: FaNpm, color: "text-red-500" },             // NPM
-  { Icon: SiPostman, color: "text-orange-500" },      // Postman
-];
+    { Icon: FaHtml5, color: "text-orange-500" },
+    { Icon: FaCss3Alt, color: "text-blue-500" },
+    { Icon: SiTailwindcss, color: "text-sky-400" },
+    { Icon: FaJsSquare, color: "text-yellow-400" },
+    { Icon: FaReact, color: "text-cyan-400" },
+    { Icon: FaNodeJs, color: "text-green-500" },
+    { Icon: SiExpress, color: "text-gray-400" },
+    { Icon: SiMongodb, color: "text-green-400" },
+    { Icon: SiJsonwebtokens, color: "text-pink-400" },
+    { Icon: FaGitAlt, color: "text-orange-600" },
+    { Icon: FaGithub, color: "text-gray-300" },
+    { Icon: FaNpm, color: "text-red-500" },
+    { Icon: SiPostman, color: "text-orange-500" },
+  ];
 
   const handleTextAnimation = () => {
     if (!hasAnimated) {
@@ -46,7 +45,7 @@ const AboutMe = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative flex justify-center items-center min-h-screen bg-darkBg text-whiteText px-8 py-16"
+      className="relative flex justify-center items-center min-h-screen bg-darkBg text-whiteText px-6 sm:px-8 py-16"
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -55,21 +54,23 @@ const AboutMe = () => {
         whileHover={{ scale: 1.05 }}
         viewport={{ once: true }}
         onViewportEnter={handleTextAnimation}
-        className="border-[3px] border-neonBlue relative rounded-2xl p-10 w-full max-w-3xl bg-[#0a0a0a] bg-opacity-100"
+        className="border-[3px] border-neonBlue relative rounded-2xl p-6 sm:p-10 w-full max-w-3xl bg-[#0a0a0a] bg-opacity-100"
       >
-        <div className="flex justify-center -mt-20">
+        <div className="flex justify-center -mt-16 sm:-mt-20">
           <img
             src={profilePic}
             alt="Profile"
-            className="w-32 h-32 object-cover rounded-full border-4 border-neonBlue"
+            className="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-full border-4 border-neonBlue"
           />
         </div>
-        <h2 className="text-center text-3xl font-bold text-neonBlue mt-4">
+        <h2 className="text-center text-xl sm:text-3xl font-bold text-neonBlue mt-4">
           Aryan Tanna
         </h2>
-        <p className="text-center text-lg text-white/80 mt-2 h-16">{text}</p>
-        <div className="mt-72 [@media_(min-width:400px)_and_(max-width:450px)]:mt-48 [@media_(min-width:450px)_and_(max-width:640px)]:mt-32 sm:mt-8"></div>
-        <div className="mt-20 border-l-4 border-neonPurple pl-4 space-y-4">
+        <p className="text-center text-sm sm:text-lg text-white/80 mt-2 h-16">
+          {text}
+        </p>
+        <div className="mt-48 sm:mt-8"></div>
+        <div className="mt-12 sm:mt-20 border-l-4 border-neonPurple pl-4 space-y-4">
           {[
             {
               title: "B.Tech in Computer Science",
@@ -95,17 +96,19 @@ const AboutMe = () => {
               transition={{ duration: 0.5, delay: item.delay }}
               viewport={{ once: true }}
             >
-              <p className="text-lg font-semibold text-neonPurple">
+              <p className="text-base sm:text-lg font-semibold text-neonPurple">
                 {item.title}
               </p>
-              <p className="text-sm text-white/70">{item.subtitle}</p>
+              <p className="text-xs sm:text-sm text-white/70">
+                {item.subtitle}
+              </p>
             </motion.div>
           ))}
         </div>
-        <h3 className="text-xl font-semibold text-neonBlue mt-8 text-center">
+        <h3 className="text-lg sm:text-xl font-semibold text-neonBlue mt-8 text-center">
           Technical Skills
         </h3>
-        <div className="flex justify-center gap-6 mt-4 flex-wrap">
+        <div className="flex justify-center gap-4 sm:gap-6 mt-4 flex-wrap">
           {techIcons.map(({ Icon, color }, index) => (
             <motion.div
               key={index}
@@ -114,7 +117,7 @@ const AboutMe = () => {
                 transition: { duration: 0.3, ease: "easeOut" },
               }}
             >
-              <Icon className={`text-4xl ${color}`} />
+              <Icon className={`text-3xl sm:text-4xl ${color}`} />
             </motion.div>
           ))}
         </div>
@@ -124,11 +127,3 @@ const AboutMe = () => {
 };
 
 export default AboutMe;
-
-
-
-
-
-
-
-

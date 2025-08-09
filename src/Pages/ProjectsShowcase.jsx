@@ -32,7 +32,7 @@ const ProjectsShowcase = () => {
     <section className="min-h-screen bg-darkBg text-white px-8 py-16 relative">
       {/* Resume Ribbon */}
       <a
-        href="/Aryan_resume_Latex.pdf"
+        href="/Aryan_Tanna_Fullstack.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-5 right-5 md:bottom-10 md:right-10 z-50 [@media_(min-width:100px)]:text-neonBlue border-[3px] border-neonBlue bg-darkBg px-4 py-2 rounded-full shadow-lg hover: transition"
@@ -92,3 +92,4 @@ const ProjectsShowcase = () => {
 };
 
 export default ProjectsShowcase;
+

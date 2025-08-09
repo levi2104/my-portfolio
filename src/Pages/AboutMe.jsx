@@ -25,7 +25,7 @@ const AboutMe = () => {
   { Icon: FaGitAlt, color: "text-orange-600" },       // Git
   { Icon: FaGithub, color: "text-gray-300" },         // GitHub
   { Icon: FaNpm, color: "text-red-500" },             // NPM
-  { Icon: SiPostman, color: "text-orange-400" },      // Postman
+  { Icon: SiPostman, color: "text-orange-500" },      // Postman
 ];
 
   const handleTextAnimation = () => {
@@ -124,6 +124,7 @@ const AboutMe = () => {
 };
 
 export default AboutMe;
+
 
 
 

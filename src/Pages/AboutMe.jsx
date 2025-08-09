@@ -19,12 +19,12 @@ const AboutMe = () => {
   { Icon: FaJsSquare, color: "text-yellow-400" },     // JavaScript
   { Icon: FaReact, color: "text-cyan-400" },          // React
   { Icon: FaNodeJs, color: "text-green-500" },        // Node.js
-  { Icon: FaGitAlt, color: "text-orange-600" },       // Git
-  { Icon: FaGithub, color: "text-gray-300" },         // GitHub
-  { Icon: FaNpm, color: "text-red-500" },             // NPM
   { Icon: SiExpress, color: "text-gray-400" },        // Express.js
   { Icon: SiMongodb, color: "text-green-400" },       // MongoDB
   { Icon: SiJsonwebtokens, color: "text-pink-400" },  // JWT
+  { Icon: FaGitAlt, color: "text-orange-600" },       // Git
+  { Icon: FaGithub, color: "text-gray-300" },         // GitHub
+  { Icon: FaNpm, color: "text-red-500" },             // NPM
   { Icon: SiPostman, color: "text-orange-400" },      // Postman
 ];
 
@@ -124,6 +124,7 @@ const AboutMe = () => {
 };
 
 export default AboutMe;
+
 
 
 

@@ -70,7 +70,7 @@ const AboutMe = () => {
           {text}
         </p>
         <div className="mt-48 sm:mt-8"></div>
-        <div className="mt-8 sm:mt-20 border-l-4 border-neonPurple pl-4 space-y-4">
+        <div className="mt-4 sm:mt-20 border-l-4 border-neonPurple pl-4 space-y-4">
           {[
             {
               title: "B.Tech in Computer Science",
@@ -127,6 +127,7 @@ const AboutMe = () => {
 };
 
 export default AboutMe;
+
 
 
 

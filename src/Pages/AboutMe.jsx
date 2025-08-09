@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 import profilePic from "/linkedin-dp.jpg";
 import { FaReact, FaHtml5, FaCss3Alt, FaJsSquare, FaNodeJs, FaGitAlt, FaGithub, FaNpm } from "react-icons/fa";
-import { SiExpress, SiMongodb, SiJsonwebtokens, SiPostman } from "react-icons/si"; 
+import { SiExpress, SiMongodb, SiJsonwebtokens, SiPostman, SiTailwindcss } from "react-icons/si"; 
 
 const AboutMe = () => {
   const [text, setText] = useState("");
@@ -13,19 +13,20 @@ const AboutMe = () => {
 
   // Icons and their colors
   const techIcons = [
-    { Icon: FaHtml5, color: "text-orange-500" },        // HTML5
-    { Icon: FaCss3Alt, color: "text-blue-500" },        // CSS3
-    { Icon: FaJsSquare, color: "text-yellow-400" },     // JavaScript
-    { Icon: FaReact, color: "text-cyan-400" },          // React
-    { Icon: FaNodeJs, color: "text-green-500" },        // Node.js
-    { Icon: FaGitAlt, color: "text-orange-600" },       // Git
-    { Icon: FaGithub, color: "text-gray-300" },         // GitHub
-    { Icon: FaNpm, color: "text-red-500" },             // NPM
-    { Icon: SiExpress, color: "text-gray-400" },        // Express.js
-    { Icon: SiMongodb, color: "text-green-400" },       // MongoDB
-    { Icon: SiJsonwebtokens, color: "text-pink-400" },  // JWT
-    { Icon: SiPostman, color: "text-orange-400" },      // Postman
-  ];
+  { Icon: FaHtml5, color: "text-orange-500" },        // HTML5
+  { Icon: FaCss3Alt, color: "text-blue-500" },        // CSS3
+  { Icon: SiTailwindcss, color: "text-sky-400" },     // Tailwind CSS
+  { Icon: FaJsSquare, color: "text-yellow-400" },     // JavaScript
+  { Icon: FaReact, color: "text-cyan-400" },          // React
+  { Icon: FaNodeJs, color: "text-green-500" },        // Node.js
+  { Icon: FaGitAlt, color: "text-orange-600" },       // Git
+  { Icon: FaGithub, color: "text-gray-300" },         // GitHub
+  { Icon: FaNpm, color: "text-red-500" },             // NPM
+  { Icon: SiExpress, color: "text-gray-400" },        // Express.js
+  { Icon: SiMongodb, color: "text-green-400" },       // MongoDB
+  { Icon: SiJsonwebtokens, color: "text-pink-400" },  // JWT
+  { Icon: SiPostman, color: "text-orange-400" },      // Postman
+];
 
   const handleTextAnimation = () => {
     if (!hasAnimated) {
@@ -123,5 +124,6 @@ const AboutMe = () => {
 };
 
 export default AboutMe;
+
 
 

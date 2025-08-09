@@ -69,7 +69,7 @@ const AboutMe = () => {
         </h2>
         <p className="text-center text-lg text-white/80 mt-2 h-16">{text}</p>
         <div className="mt-72 [@media_(min-width:400px)_and_(max-width:450px)]:mt-48 [@media_(min-width:450px)_and_(max-width:640px)]:mt-32 sm:mt-8"></div>
-        <div className="mt-18 border-l-4 border-neonPurple pl-4 space-y-4">
+        <div className="mt-20 border-l-4 border-neonPurple pl-4 space-y-4">
           {[
             {
               title: "B.Tech in Computer Science",
@@ -124,6 +124,7 @@ const AboutMe = () => {
 };
 
 export default AboutMe;
+
 
 
 

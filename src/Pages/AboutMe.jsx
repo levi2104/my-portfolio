@@ -7,7 +7,7 @@ const AboutMe = () => {
   const [text, setText] = useState("");
   const [hasAnimated, setHasAnimated] = useState(false);
   const bioText =
-    "I am a Front-end Developer skilled in React.js, JavaScript, and modern UI frameworks. Passionate about crafting user-centric web applications with a focus on performance and responsiveness.";
+    "Full-stack developer passionate about building modern, responsive web applications using React.js, Node.js, Express.js and MongoDB. Experienced in designing secure authentication systems, crafting AI-enhanced user experiences, and delivering seamless, scalable solutions.";
   const sectionRef = useRef(null);
 
   const handleTextAnimation = () => {
@@ -116,3 +116,4 @@ const AboutMe = () => {
 };
 
 export default AboutMe;
+
